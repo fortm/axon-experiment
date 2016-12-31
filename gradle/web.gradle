@@ -36,6 +36,7 @@ dependencyManagement {
 }
 */
 
+/*
 ext {
     snippetsDir = file('build/generated-snippets')
 }
@@ -57,7 +58,6 @@ jar {
     }
 }
 
-//TODO: only works if the Groovy plugin has previously been included.  Should probably check.
 task documentationTests( type: Test ) {
     group 'Documentation'
     description = 'Runs the tests that generate the examples for the API documentation.'
@@ -74,3 +74,4 @@ task documentationTests( type: Test ) {
     def springProfilesActive = System.properties['spring.profiles.active']
     if ( springProfilesActive ) { systemProperties['spring.profiles.active'] = springProfilesActive }
 }
+*/

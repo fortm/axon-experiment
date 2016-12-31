@@ -29,10 +29,6 @@ buildscript {
 }
 
 plugins {
-    id "org.asciidoctor.convert" version "1.5.3"
-}
-
-plugins {
     id "com.jfrog.bintray" version "1.7.1"
 }
 
@@ -75,17 +71,17 @@ apply from: "$rootDir/gradle/cloud-tracing.gradle"
 //apply from: "$rootDir/gradle/cloud-contract.gradle"
 //apply from: "$rootDir/gradle/social.gradle"
 apply from: "$rootDir/gradle/io.gradle"
-apply from: "$rootDir/gradle/ops.gradle"
-apply from: "$rootDir/gradle/template-engines.gradle"
+//apply from: "$rootDir/gradle/ops.gradle"
+//apply from: "$rootDir/gradle/template-engines.gradle"
 apply from: "$rootDir/gradle/maven-publish.gradle"
 apply from: "$rootDir/gradle/spock.gradle"
 apply from: "$rootDir/gradle/dependency-exclusions.gradle"
 apply from: "$rootDir/gradle/conflicts.gradle"
-apply from: "$rootDir/gradle/cucumber.gradle"
-apply from: "$rootDir/gradle/docker.gradle"
-apply from: "$rootDir/gradle/bintray.gradle"
+//apply from: "$rootDir/gradle/cucumber.gradle"
+//apply from: "$rootDir/gradle/docker.gradle"
+//apply from: "$rootDir/gradle/bintray.gradle"
 apply from: "$rootDir/gradle/codenarc.gradle"
-apply from: "$rootDir/gradle/jacoco.gradle"
+//apply from: "$rootDir/gradle/jacoco.gradle"
 apply from: "$rootDir/gradle/jackson.gradle"
 
 dependencies {

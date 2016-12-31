@@ -19,7 +19,7 @@ dependencies {
 //    compile('org.springframework.boot:spring-boot-starter-jooq')
 //    compile('org.springframework.boot:spring-boot-starter-jdbc')
 //    runtime('com.h2database:h2')
-//    runtime('org.hsqldb:hsqldb')
+    runtime('org.hsqldb:hsqldb')
 //    runtime('org.apache.derby:derby')
     runtime('mysql:mysql-connector-java')
 //    runtime('org.postgresql:postgresql')

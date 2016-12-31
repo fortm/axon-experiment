@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jvm-guy-spring-boot-project.iml" filepath="$PROJECT_DIR$/.idea/modules/jvm-guy-spring-boot-project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jvm-guy-spring-boot-project_main.iml" filepath="$PROJECT_DIR$/.idea/modules/jvm-guy-spring-boot-project_main.iml" group="jvm-guy-spring-boot-project" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jvm-guy-spring-boot-project_test.iml" filepath="$PROJECT_DIR$/.idea/modules/jvm-guy-spring-boot-project_test.iml" group="jvm-guy-spring-boot-project" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/axon-experiment.iml" filepath="$PROJECT_DIR$/.idea/modules/axon-experiment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/axon-experiment_main.iml" filepath="$PROJECT_DIR$/.idea/modules/axon-experiment_main.iml" group="axon-experiment" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/axon-experiment_test.iml" filepath="$PROJECT_DIR$/.idea/modules/axon-experiment_test.iml" group="axon-experiment" />
     </modules>
   </component>
 </project>

@@ -23,4 +23,10 @@ class ComplaintFiledEvent {
     final String id
     final String company
     final String description
+
+    ComplaintFiledEvent( final String anID, final String aCompany, final String aDescription ) {
+        id = anID
+        company = aCompany
+        description = aDescription
+    }
 }

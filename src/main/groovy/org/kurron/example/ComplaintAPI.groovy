@@ -38,7 +38,9 @@ class ComplaintAPI {
 
     @PostMapping
     CompletableFuture<String> fileComplaint( @RequestBody Map<String, String> request ) {
-        theGateway.send( new FileComplaintCommand( id: UUID.randomUUID() as String, company: request.get( 'company' ), description: request.get( 'description' ) ) )
+        // best practice is to have the client generate the id, which means we should probably be using PUT instead
+        def complaintID = UUID.randomUUID() as String
+        theGateway.send( new FileComplaintCommand( complaintID, request['company' ], request['description'] ) )
     }
 
     @GetMapping

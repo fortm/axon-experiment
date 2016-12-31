@@ -21,6 +21,6 @@ dependencies {
 //    runtime('com.h2database:h2')
     runtime('org.hsqldb:hsqldb')
 //    runtime('org.apache.derby:derby')
-    runtime('mysql:mysql-connector-java')
+//    runtime('mysql:mysql-connector-java')
 //    runtime('org.postgresql:postgresql')
 }

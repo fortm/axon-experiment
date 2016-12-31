@@ -29,12 +29,20 @@ class Complaint {
 
     @CommandHandler
     Complaint( FileComplaintCommand command ) {
+        // simulate business logic
         assert command.company
-        apply( new ComplaintFiledEvent( id: command.id, company: command.company, description: command.description ) )
+
+        // if the command is successfully applied, place an event into the stream -- updating the state of the aggregate
+        apply( new ComplaintFiledEvent( command.id, command.company, command.description ) )
     }
 
+    /**
+     * Called when the system loads the event -- when we are recreating the current state of the aggregate.
+     * @param event
+     */
     @EventSourcingHandler
-    protected void on( ComplaintFiledEvent event ) {
+    protected void onLoad( ComplaintFiledEvent event ) {
+        // only pull out the pieces of the event that the aggregate is interested in
         complaintId = event.id
     }
 }

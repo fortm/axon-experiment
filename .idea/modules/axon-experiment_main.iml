@@ -31,7 +31,6 @@
     <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-config:4.1.4.RELEASE" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.hsqldb:hsqldb:2.3.3" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-web:4.1.4.RELEASE" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: mysql:mysql-connector-java:5.1.40" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: net.logstash.logback:logstash-logback-encoder:4.8" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:8.5.6" level="project" />
     <orderEntry type="library" name="Gradle: org.hibernate:hibernate-validator:5.2.4.Final" level="project" />

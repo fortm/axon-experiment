@@ -28,7 +28,7 @@ class ComplaintQueryObjectUpdater {
     }
 
     @EventHandler
-    void on( ComplaintFiledEvent event ) {
+    void handleEvent( ComplaintFiledEvent event ) {
         theRepository.save( new ComplaintQueryObject( id: event.id, company: event.company, description: event.description ) )
     }
 }

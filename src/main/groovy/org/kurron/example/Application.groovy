@@ -16,7 +16,6 @@
 package org.kurron.example
 
 import groovy.util.logging.Slf4j
-import org.kurron.feedback.FeedbackAwareBeanPostProcessor
 import org.springframework.amqp.core.AmqpAdmin
 import org.springframework.amqp.core.Binding
 import org.springframework.amqp.core.BindingBuilder
@@ -47,10 +46,12 @@ class Application {
         SpringApplication.run( Application, args )
     }
 
+/*
     @Bean
     static FeedbackAwareBeanPostProcessor feedbackAwareBeanPostProcessor( ApplicationProperties configuration ) {
         new FeedbackAwareBeanPostProcessor( configuration.logging.serviceCode, configuration.logging.serviceInstance, configuration.logging.realm )
     }
+*/
 
     // global CORS handler that lets anything from anywhere in
     @Bean

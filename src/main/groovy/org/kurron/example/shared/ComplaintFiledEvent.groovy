@@ -13,14 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kurron.example
+package org.kurron.example.shared
 
 import groovy.transform.Canonical
 
 @Canonical
-class FileComplaintCommand {
+class ComplaintFiledEvent {
 
-    String id
-    String company
-    String description
+    final String id
+    final String company
+    final String description
+
+    ComplaintFiledEvent( final String anID, final String aCompany, final String aDescription ) {
+        id = anID
+        company = aCompany
+        description = aDescription
+    }
 }

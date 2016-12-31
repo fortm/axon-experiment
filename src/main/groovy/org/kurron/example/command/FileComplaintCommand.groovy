@@ -13,12 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kurron.example
+package org.kurron.example.command
 
-import org.springframework.data.jpa.repository.JpaRepository
-import org.springframework.stereotype.Repository
+import groovy.transform.Canonical
 
-@Repository
-interface ComplaintQueryObjectRepository extends JpaRepository<ComplaintQueryObject, String> {
+/**
+ * A state change within an application starts with a Command. A Command is a combination of expressed intent
+ * (which describes what you want done) as well as the information required to undertake action based on that intent.
+ */
 
+@Canonical
+class FileComplaintCommand {
+
+    String id
+    String company
+    String description
 }

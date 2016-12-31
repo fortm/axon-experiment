@@ -17,6 +17,9 @@ package org.kurron.example
 
 import java.util.concurrent.CompletableFuture
 import org.axonframework.commandhandling.gateway.CommandGateway
+import org.kurron.example.command.FileComplaintCommand
+import org.kurron.example.query.ComplaintQueryObject
+import org.kurron.example.query.ComplaintQueryObjectRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping

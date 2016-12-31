@@ -13,19 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kurron.example
+package org.kurron.example.query
 
-import groovy.transform.Canonical
-import javax.persistence.Entity
-import javax.persistence.Id
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.stereotype.Repository
 
-@Canonical
-@Entity
-class ComplaintQueryObject {
-
-    @Id
-    String id
-    String company
-    String description
+@Repository
+interface ComplaintQueryObjectRepository extends JpaRepository<ComplaintQueryObject, String> {
 
 }

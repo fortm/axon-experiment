@@ -13,6 +13,11 @@ TODO
 
 # Tips and Tricks
 
+## Concepts
+
+* Commands describe an intent to change the application's state.
+* Events are objects that describe something that has occurred in the application.
+* 
 ## Verifying The Setup
 1. start the service `./gradlew bootRun`
 1. add a complaint `http POST localhost:8080/complaints "company"="Apple" "description"="Keyboard missing"`

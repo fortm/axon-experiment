@@ -13,20 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kurron.example
+package org.kurron.example.command
 
 import static org.axonframework.commandhandling.model.AggregateLifecycle.apply
 import org.axonframework.commandhandling.CommandHandler
 import org.axonframework.commandhandling.model.AggregateIdentifier
 import org.axonframework.eventsourcing.EventSourcingHandler
 import org.axonframework.spring.stereotype.Aggregate
+import org.kurron.example.shared.ComplaintFiledEvent
 
+/**
+ * The Command Model is used to process the incoming command, to validate it and define the outcome. Within this model, a Command Handler is
+ * responsible for handling commands of a certain type and taking action based on the information contained inside it.
+ *
+ * An Aggregate is an entity or group of entities that is always kept in a consistent state. The Aggregate Root is the object on top of the
+ * aggregate tree that is responsible for maintaining this consistent state.
+ */
 @Aggregate
 class Complaint {
 
+    /**
+     * Correlates the aggregate instance to the events that pertain to it.
+     */
     @AggregateIdentifier
     private String complaintId
 
+    /**
+     * Processes the command.
+     * @param command the proposed state change to process.
+     */
     @CommandHandler
     Complaint( FileComplaintCommand command ) {
         // simulate business logic
@@ -37,8 +52,8 @@ class Complaint {
     }
 
     /**
-     * Called when the system loads the event -- when we are recreating the current state of the aggregate.
-     * @param event
+     * Called when the event is generated.
+     * @param event fact to process.
      */
     @EventSourcingHandler
     protected void onLoad( ComplaintFiledEvent event ) {

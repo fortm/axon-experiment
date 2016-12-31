@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kurron.example
+package org.kurron.example.query
 
+import groovy.util.logging.Slf4j
 import org.axonframework.eventhandling.EventHandler
+import org.kurron.example.shared.ComplaintFiledEvent
 import org.springframework.stereotype.Component
 
+@Slf4j
 @Component
 class ComplaintQueryObjectUpdater {
 
@@ -27,8 +30,17 @@ class ComplaintQueryObjectUpdater {
         theRepository = repository
     }
 
+    /**
+     * Process the fact by persisting the query model.
+     * @param event fact to process.
+     */
     @EventHandler
-    void handleEvent( ComplaintFiledEvent event ) {
+    void handleEvent( ComplaintFiledEvent event  ) {
         theRepository.save( new ComplaintQueryObject( id: event.id, company: event.company, description: event.description ) )
+    }
+
+    @EventHandler
+    void handleEvent( Object event  ) {
+        log.warn( 'Event of type {} was ignored.', event.class.name )
     }
 }

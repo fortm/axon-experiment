@@ -13,20 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kurron.example
+package org.kurron.example.query
 
 import groovy.transform.Canonical
+import javax.persistence.Entity
+import javax.persistence.Id
 
 @Canonical
-class ComplaintFiledEvent {
+@Entity
+class ComplaintQueryObject {
 
-    final String id
-    final String company
-    final String description
+    @Id
+    String id
+    String company
+    String description
 
-    ComplaintFiledEvent( final String anID, final String aCompany, final String aDescription ) {
-        id = anID
-        company = aCompany
-        description = aDescription
-    }
 }

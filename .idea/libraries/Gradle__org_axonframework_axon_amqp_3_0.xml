@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.axonframework:axon-amqp:3.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-amqp/3.0/e0c418b7764c19809446dc6b474623246beed2f3/axon-amqp-3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-amqp/3.0/e4ad7b4ea65705740a20c352db1163478f1b05f8/axon-amqp-3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

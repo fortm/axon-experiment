@@ -75,12 +75,14 @@ class Application {
     }
 
     @Bean
-    Binding binding() {
-        BindingBuilder.bind( queue()).to( exchange()).with( '*' ).noargs()
+    Binding binding( Queue queue, Exchange exchange ) {
+        BindingBuilder.bind( queue ).to( exchange ).with( '*' ).noargs()
     }
 
+    // Do not make this static or the binding will not be declared
+    // TODO: figure out exactly why we need this.  Is it because we don't have a consumer set up yet?
     @Autowired
-    static void configure( AmqpAdmin admin, Exchange exchange, Queue queue, Binding binding ) {
+    void configure( AmqpAdmin admin, Exchange exchange, Queue queue, Binding binding ) {
         admin.declareExchange( exchange )
         admin.declareQueue( queue )
         admin.declareBinding( binding )

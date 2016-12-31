@@ -27,6 +27,7 @@
     <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-all:indy:2.4.7" level="project" />
     <orderEntry type="library" name="Gradle: org.kurron:tools-groovy:1.5.0.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.axonframework:axon-spring-boot-starter:3.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.axonframework:axon-amqp:3.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:1.4.3.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.restdocs:spring-restdocs-mockmvc:1.1.2.RELEASE" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.hsqldb:hsqldb:2.3.3" level="project" />
@@ -73,6 +74,8 @@
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.4" level="project" />
     <orderEntry type="library" name="Gradle: org.kurron:tools-java:1.4.0.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.axonframework:axon-spring-boot-autoconfigure:3.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.axonframework:axon-core:3.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.rabbitmq:amqp-client:3.6.5" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test:1.4.3.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test-autoconfigure:1.4.3.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: com.jayway.jsonpath:json-path:2.2.0" level="project" />
@@ -132,8 +135,9 @@
     <orderEntry type="library" name="Gradle: org.aspectj:aspectjrt:1.8.9" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.amqp:spring-amqp:1.6.6.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: com.rabbitmq:http-client:1.0.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: com.rabbitmq:amqp-client:3.6.5" level="project" />
     <orderEntry type="library" name="Gradle: org.axonframework:axon-spring:3.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.thoughtworks.xstream:xstream:1.4.9" level="project" />
+    <orderEntry type="library" name="Gradle: xpp3:xpp3:1.1.4c" level="project" />
     <orderEntry type="library" name="Gradle: net.minidev:json-smart:2.2.1" level="project" />
     <orderEntry type="library" name="Gradle: org.objenesis:objenesis:2.4" level="project" />
     <orderEntry type="library" name="Gradle: org.json:json:20140107" level="project" />
@@ -159,7 +163,6 @@
     <orderEntry type="library" name="Gradle: com.netflix.servo:servo-core:0.10.1" level="project" />
     <orderEntry type="library" name="Gradle: com.netflix.netflix-commons:netflix-commons-util:0.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.netflix.netflix-commons:netflix-statistics:0.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.axonframework:axon-core:3.0" level="project" />
     <orderEntry type="library" name="Gradle: net.minidev:accessors-smart:1.1" level="project" />
     <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.1.8" level="project" />
     <orderEntry type="library" name="Gradle: org.bouncycastle:bcprov-jdk15on:1.54" level="project" />
@@ -171,8 +174,6 @@
     <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-epoll:4.0.27.Final" level="project" />
     <orderEntry type="library" name="Gradle: com.sun.jersey:jersey-core:1.19.1" level="project" />
     <orderEntry type="library" name="Gradle: com.netflix.servo:servo-internal:0.10.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.thoughtworks.xstream:xstream:1.4.9" level="project" />
-    <orderEntry type="library" name="Gradle: xpp3:xpp3:1.1.4c" level="project" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm:5.0.3" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.0.27.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-handler:4.0.27.Final" level="project" />

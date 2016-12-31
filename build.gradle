@@ -88,6 +88,7 @@ dependencies {
     compile "org.codehaus.groovy:groovy-all:${groovyVersion}:indy"
     compile "org.kurron:tools-groovy:${toolsGroovyVersion}"
     compile "org.axonframework:axon-spring-boot-starter:${axonVersion}"
+    compile "org.axonframework:axon-amqp:${axonVersion}"
 
     runtime "net.logstash.logback:logstash-logback-encoder:${logstashLogbackVersion}"
 }

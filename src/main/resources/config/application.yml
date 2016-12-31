@@ -5,3 +5,13 @@ info:
         description: ${description}
         version: ${version}
         built-on: ${builtOn}
+
+axon:
+    amqp:
+        exchange: Complaints
+
+spring:
+    rabbitmq:
+        requested-heartbeat: 5
+        publisher-confirms: true
+        publisher-returns: true

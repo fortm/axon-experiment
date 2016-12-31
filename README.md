@@ -14,7 +14,11 @@ TODO
 # Tips and Tricks
 
 ## Verifying The Setup
-TODO
+1. start the service `./gradlew bootRun`
+1. add a complaint `http POST localhost:8080/complaints "company"="Apple" "description"="Keyboard missing"`
+1. add another complains `http POST localhost:8080/complaints "company"="Google" "description"="E-Mail missing"`
+1. view all complaints ``http GET localhost:8080/complaints
+1. view a specific complaint `http GET localhost:8080/complaints/your-complaint-id`
 
 ## Running Integration Tests From Gradle
 TODO

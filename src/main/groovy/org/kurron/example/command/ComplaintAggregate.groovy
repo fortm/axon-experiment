@@ -16,6 +16,8 @@
 package org.kurron.example.command
 
 import static org.axonframework.commandhandling.model.AggregateLifecycle.apply
+import groovy.util.logging.Slf4j
+import java.util.concurrent.ThreadLocalRandom
 import org.axonframework.commandhandling.CommandHandler
 import org.axonframework.commandhandling.model.AggregateIdentifier
 import org.axonframework.eventsourcing.EventSourcingHandler
@@ -29,8 +31,9 @@ import org.kurron.example.shared.ComplaintFiledEvent
  * An Aggregate is an entity or group of entities that is always kept in a consistent state. The Aggregate Root is the object on top of the
  * aggregate tree that is responsible for maintaining this consistent state.
  */
+@Slf4j
 @Aggregate
-class Complaint {
+class ComplaintAggregate {
 
     /**
      * Correlates the aggregate instance to the events that pertain to it.
@@ -39,20 +42,29 @@ class Complaint {
     private String complaintId
 
     /**
-     * Processes the command.
+     * Processes the command.  Since this is the constructor, command will cause a new aggregate to be created and stored in the repository
      * @param command the proposed state change to process.
      */
     @CommandHandler
-    Complaint( FileComplaintCommand command ) {
-        // simulate business logic
-        assert command.company
+    ComplaintAggregate( FileComplaintCommand command ) {
+        def event = simulateBusinessLogic( command )
 
         // if the command is successfully applied, place an event into the stream -- updating the state of the aggregate
-        apply( new ComplaintFiledEvent( command.id, command.company, command.description ) )
+        apply( event )
+    }
+
+    private static ComplaintFiledEvent simulateBusinessLogic( FileComplaintCommand command ) {
+        if( ThreadLocalRandom.current().nextBoolean() ) {
+            log.debug( 'Command successfully processed.' )
+        }
+        else {
+            throw new UnsupportedOperationException( 'Unable to process command.' )
+        }
+        new ComplaintFiledEvent( command.id, command.company, command.description )
     }
 
     /**
-     * Called when the event is generated.
+     * Called when the event is generated, which is only after the business logic successfully completes.
      * @param event fact to process.
      */
     @EventSourcingHandler

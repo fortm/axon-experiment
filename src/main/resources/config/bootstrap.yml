@@ -1,0 +1,15 @@
+spring:
+    application:
+        name: ${name}
+    cloud:
+        config:
+            failFast: true
+            discovery:
+                enabled: true
+                serviceId: jvm-guy-configuration-server
+        consul:
+            host: consul 
+            port: 8500
+            discovery:
+                tags:
+                - ${version}

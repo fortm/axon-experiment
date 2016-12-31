@@ -16,8 +16,15 @@
 package org.kurron.example
 
 import groovy.util.logging.Slf4j
-import org.kurron.example.shared.ApplicationProperties
 import org.kurron.feedback.FeedbackAwareBeanPostProcessor
+import org.springframework.amqp.core.AmqpAdmin
+import org.springframework.amqp.core.Binding
+import org.springframework.amqp.core.BindingBuilder
+import org.springframework.amqp.core.Exchange
+import org.springframework.amqp.core.ExchangeBuilder
+import org.springframework.amqp.core.Queue
+import org.springframework.amqp.core.QueueBuilder
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.EnableConfigurationProperties
@@ -45,7 +52,7 @@ class Application {
         new FeedbackAwareBeanPostProcessor( configuration.logging.serviceCode, configuration.logging.serviceInstance, configuration.logging.realm )
     }
 
-    // global CORS handler that lets anything frm anywhere in
+    // global CORS handler that lets anything from anywhere in
     @Bean
     WebMvcConfigurer corsConfigurer() {
         new WebMvcConfigurerAdapter() {
@@ -54,5 +61,27 @@ class Application {
                 registry.addMapping( '/**' ).allowedOrigins( '*' ).allowedMethods( 'GET', 'POST', 'DELETE', 'PUT', 'OPTIONS' )
             }
         }
+    }
+
+    @Bean
+    Exchange exchange() {
+        ExchangeBuilder.fanoutExchange( 'Complaints' ).build()
+    }
+
+    @Bean
+    Queue queue() {
+        QueueBuilder.durable( 'Complaints' ).build()
+    }
+
+    @Bean
+    Binding binding() {
+        BindingBuilder.bind( queue()).to( exchange()).with( '*' ).noargs()
+    }
+
+    @Autowired
+    static void configure( AmqpAdmin admin, Exchange exchange, Queue queue, Binding binding ) {
+        admin.declareExchange( exchange )
+        admin.declareQueue( queue )
+        admin.declareBinding( binding )
     }
 }

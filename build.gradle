@@ -36,7 +36,7 @@ plugins {
     id "com.jfrog.bintray" version "1.7.1"
 }
 
-description = 'Bare bones example REST micro-service'
+description = 'Sample application showcasing the Axon CQRS framework'
 group = 'org.kurron'
 ext.builtOn = new Date()
 

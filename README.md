@@ -1,48 +1,5 @@
-# Instructions
-To use this template, you will need to follow these steps:
-
-1. `git init` to initialize Git
-1. `git add --all` to put all files under source control
-1. `git status` to make sure things look right
-1. edit the `settings.gradle` file and replace the project name, eg `atlantis`
-1. edit the `build.gradle` file, replacing the `group` and `description`
-1. edit the `gradle.properties` file and reset the version properties to `1.0.0`
-1. edit the `gradle.properties` and point it to your artifact server
-1. edit the `README.md` file and put in a quick description, removing this `Instructions` section
-1. run a quick build to verify that things compile, `./gradlew`
-1. double check the output and see if it looks right, `ls build/libs`
-1. edit the `gradle.properties` and point it to your Docker registry coordinates
-1. edit the `bootstrap.yml` and point it to your Consul agent so a configuration server can be located
-1. if you are publishing to [Docker Hub](), make sure to authenticate first via `docker login`
-1. run the full build and verify things work, `bin/simulate-build-server.sh`
-1. launch the application, `./gradlew bootRun`
-1. check the `operations/info` endpoint, `http localhost:8080/operations/info`
-1. check the `operations/health` endpoint, `http localhost:8080/operations/health`
-1. check the `/descriptor/application` endpoint, `http localhost:8080/descriptor/application`
-1. check the circuit breaker panel, in your browser open `http://localhost:8080/hystrix`, enter `http://localhost:8080/operations/hystrix.stream` as the URL
-1. issue `http localhost:8080/descriptor/application` several times to tickle the circuit breaker panel
-1. edit the `.gitignore` file and remove the `.idea` entry so you can save your IntelliJ files
-1. `git status` to make sure things still look right
-1. `git commit -am 'Initial check-in'` to save our work
-1. import the `build.gradle` file into IntelliJ and create a new project
-1. close the project
-1. `cd .idea`
-1. copy the `codeStyleSettings.xml` from another Groovy project, eg. `cp ~/GitHub/my-working-groovy-project/.idea/codeStyleSettings.xml .`
-1. copy the copyright information from another Groovy project, eg. `cp -r ~/GitHub/my-working-groovy-project/.idea/copyright/ .`
-1. `git add .idea`
-1. re-open the project and make sure all the IntelliJ files are under Git
-1. enable the newly added copyright via Settings->Editor->Copyright
-1. commit to Git
-1. Use IntelliJ to refactor the package name to suit your project
-1. edit `build.gradle` and make `ext.coverageExcludes` an empty list 
-1. `./gradlew`
-1. check the new artifact coordinates, eg `ls ~/.m2/repository/org/kurron/atlantis/atlantis/1.0.0.RELEASE/`
-1. commit your changes
-
-----CUT HERE ----
-
 # Overview
-This project ...
+This project is a simple showcase of the Axon 3 CQRS framework. 
 
 # Prerequisites
 * [JDK 8](http://www.oracle.com/technetwork/java/index.html) installed and working

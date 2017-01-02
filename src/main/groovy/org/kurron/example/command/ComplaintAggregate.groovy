@@ -55,9 +55,10 @@ class ComplaintAggregate {
 
     private static ComplaintFiledEvent simulateBusinessLogic( FileComplaintCommand command ) {
         if( ThreadLocalRandom.current().nextBoolean() ) {
-            log.debug( 'Command successfully processed.' )
+            log.info( 'Command successfully processed.' )
         }
         else {
+            log.warn( 'Command failed to processed.' )
             throw new UnsupportedOperationException( 'Unable to process command.' )
         }
         new ComplaintFiledEvent( command.id, command.company, command.description )

@@ -16,6 +16,8 @@
 package org.kurron.example
 
 import groovy.util.logging.Slf4j
+import org.kurron.example.query.ComplaintQueryObjectRepository
+import org.kurron.example.query.EventProcessor
 import org.springframework.amqp.core.AmqpAdmin
 import org.springframework.amqp.core.Binding
 import org.springframework.amqp.core.BindingBuilder
@@ -87,4 +89,17 @@ class Application {
         admin.declareQueue( queue )
         admin.declareBinding( binding )
     }
+
+/*
+    @Bean
+    CommandProcessor commandProcessor( EventBus evenBus ) {
+        new CommandProcessor( evenBus )
+    }
+*/
+
+    @Bean
+    EventProcessor complaintQueryObjectUpdater( ComplaintQueryObjectRepository repository ) {
+        new EventProcessor( repository )
+    }
+
 }

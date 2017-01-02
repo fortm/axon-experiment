@@ -18,15 +18,14 @@ package org.kurron.example.query
 import groovy.util.logging.Slf4j
 import org.axonframework.eventhandling.EventHandler
 import org.kurron.example.shared.ComplaintFiledEvent
-import org.springframework.stereotype.Component
+import org.kurron.example.shared.ProcessingFailedEvent
 
 @Slf4j
-@Component
-class ComplaintQueryObjectUpdater {
+class EventProcessor {
 
     private final ComplaintQueryObjectRepository theRepository
 
-    ComplaintQueryObjectUpdater( ComplaintQueryObjectRepository repository ) {
+    EventProcessor( ComplaintQueryObjectRepository repository ) {
         theRepository = repository
     }
 
@@ -36,7 +35,13 @@ class ComplaintQueryObjectUpdater {
      */
     @EventHandler
     void handleEvent( ComplaintFiledEvent event  ) {
+        log.info( 'Filed Complaint event {} detected.  Persisting information for use in the UI.', event.id )
         theRepository.save( new ComplaintQueryObject( id: event.id, company: event.company, description: event.description ) )
+    }
+
+    @EventHandler
+    void handleEvent( ProcessingFailedEvent event  ) {
+        log.info( 'Processing failure for event {} detected.  Persisting information for later analysis.', event.id )
     }
 
     @EventHandler

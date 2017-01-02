@@ -90,15 +90,8 @@ class Application {
         admin.declareBinding( binding )
     }
 
-/*
     @Bean
-    CommandProcessor commandProcessor( EventBus evenBus ) {
-        new CommandProcessor( evenBus )
-    }
-*/
-
-    @Bean
-    EventProcessor complaintQueryObjectUpdater( ComplaintQueryObjectRepository repository ) {
+    EventProcessor eventProcessor( ComplaintQueryObjectRepository repository ) {
         new EventProcessor( repository )
     }
 
